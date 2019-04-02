@@ -35,8 +35,8 @@ namespace RealTimeCharts_Server
                     .AllowCredentials());
             });
 
-            services.AddSignalRCore();
-            //services.AddSignalR();
+            //services.AddSignalRCore();
+            services.AddSignalR();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
