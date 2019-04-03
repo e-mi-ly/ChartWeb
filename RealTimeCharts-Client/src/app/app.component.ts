@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'RealTimeCharts-Client';
   public chartOptions: any = {
     scaleShowVerticalLines: true,
     responsive: true,
