@@ -1,0 +1,10 @@
+# ChartWeb is the demo for signalR of Group 13 - .Net class
+
+# Run server
+cd ./ChartWeb/RealTimeCharts_Server/RealTimeCharts_Server
+dotnet run
+
+# Run client
+cd ./ChartWeb/RealTimeCharts-Client
+npm i
+ng serve
