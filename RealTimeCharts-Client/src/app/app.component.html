@@ -10,7 +10,52 @@
 </div>
 <br><br>
 <ul>
-  <li *ngFor='let data of signalRService.bradcastedData'>
+  <li *ngFor='let data of signalRService.broadcasted'>
     <strong>Label: </strong> {{data.label}} - <strong>Value: </strong> {{data.data[0]}}
   </li>
 </ul>
+
+<!-- Prediction -->
+<div>
+  <h4>Prediction - {{signalRService.ConnectionId}}</h4>
+
+  <mat-form-field>
+    <mat-label>Choose data predict</mat-label>
+    <mat-select [(formControl)]="dataSelected">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 20px;">
+    <mat-label>predict</mat-label>
+    <mat-select [(formControl)]="predictSelected">
+      <mat-option *ngFor="let predict of predicts" [value]="predict">
+        {{predict}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button style="margin-left: 20px;" color="primary" mat-stroked-button (click)="sendPredict()">Send Predict!</button>
+</div>
+
+<!-- Prediction Report -->
+<div>
+  <h4>Prediction Report</h4>
+
+  <table *ngIf="signalRService.predictions && signalRService.predictions.length > 0">
+    <thead>
+      <th class="id-col">User Id</th>
+      <th class="data-col">Predicted on data</th>
+      <th class="prediction-col">Prediction</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of signalRService.predictions">
+        <td class="id-col">{{item.connectionId}}</td>
+        <td class="data-col">{{item.data}}</td>
+        <td class="prediction-col">{{item.prediction}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

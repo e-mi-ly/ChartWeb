@@ -5,6 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+// Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatOptionModule, MatFormFieldModule, MatSelectModule, MatButtonModule, MatTableModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +17,15 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    // Material modules
+    BrowserAnimationsModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

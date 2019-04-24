@@ -26,7 +26,7 @@ namespace RealTimeCharts_Server.Controllers
         {
             var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
 
-            return Ok(new { Message = "Request Completed" });
+            return Ok(new { message = "Request Completed" });
         }
     }
 }
