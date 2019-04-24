@@ -6,5 +6,5 @@ dotnet run
 
 # Run client
 cd RealTimeCharts-Client\
-npm i
+npm i\
 ng serve
